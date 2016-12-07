@@ -209,6 +209,10 @@ function reload() {
     location.reload();
 }
 
-function Sendata(){
-    $post ("http://localhost/demo/FormAjax.html?", function())
+function post2() {
+
+	var user = document.getElementById("user_name").value;
+	$.post('http://localhost/demo/index.php',{user:user},function(data){
+		document.getElementById("username_error").innerHTML=data;
+	});
 }
